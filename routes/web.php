@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home');
+    return view('categorias.Index');
 })->name('index');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -44,4 +44,9 @@ Route::controller(App\Http\Controllers\Auth\VerificationController::class)->grou
     Route::get('email/verify', 'show')->name('verification.notice');
     Route::get('email/verify/{id}/{hash}', 'verify')->name('verification.verify');
     Route::post('email/resend', 'resend')->name('verification.resend');
+
+});
+
+Route::get('/categorias', function () {
+    return view('categorias.Index');
 });
