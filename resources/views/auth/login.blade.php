@@ -7,105 +7,100 @@
 @section('title', 'Inicia Sesión | TGL')
 
 @section('content')
-    <div class="d-flex justify-content-center align-items-center vh-100 w-100">
-        <div class="container d-flex border-5 w-100">
-            <div
-                class="d-none w-100 mh-100 d-md-flex flex-column justify-content-center align-items-center text-center bg-dark color-white h-500">
-                <h2 class="fs-1">¡¡Bienvenido!!</h2>
-                <p class="mt-3 fs-5">Si aún no tienes cuenta por favor registrate aqui</p>
-                <a href="{{ route('register') }}" class="btn btn-outline-light w-25 rounded-5"> {{ __('Register') }}
-                </a>
+<body class="d-flex justify-content-center align-items-center vh-100">
+    <div
+      class="container d-flex rounded-5 box-shadow-57 h-75 max-width-900 m-2"
+    >
+      <div
+        class="w-50 d-flex justify-content-center align-items-center rounded-start-5 flex-column p-4 bg-dark text-light"
+      >
+        <h2 class="fs-2">Bienvenido</h2>
+  
+        <p class="m-3 text-center">
+          para unirte a nuestra comunidad por favor inicia sesion con tus datos
+        </p>
+        <input
+          type="button"
+          class="btn btn-outline-light w-50 rounded-5 mt-3"
+          value="Iniciar sesión"
+        />
+      </div>
+  
+      <div
+        class="d-flex justify-content-center align-items-center w-50 rounded-end-5 bg-light text-center"
+      >
+        <div class="py-4">
+          <h2 class="fs-2">Crear cuenta</h2>
+          <div class="m-3">
+            <i
+              class="bx bxl-google border border-secondary p-3 m-1 fs-4 rounded-circle cursor-pointer "
+            ></i>
+            <i
+              class="bx bxl-github border border-secondary p-3 m-1 fs-4 rounded-circle cursor-pointer"
+            ></i>
+            <i
+              class="bx bxl-linkedin  border border-secondary p-3 m-1 fs-4 rounded-circle cursor-pointer"
+            ></i>
+          </div>
+          <p>Ingresa tu correo para registrarte</p>
+          <form
+            class="d-flex justify-content-center align-items-center flex-column"
+          >
+            <div class="input-group flex-nowrap mb-4">
+              <span
+                class="input-group-text border border-dark"
+                id="addon-wrapping"
+              >
+                <i class="bx bxs-user"></i>
+              </span>
+              <input
+                type="text"
+                class="form-control border border-dark"
+                placeholder="Nombre Completo"
+                aria-label="Nombre Completo"
+                aria-describedby="addon-wrapping"
+              />
             </div>
-
-            <div
-                class="w-100 mh-100 d-flex flex-column justify-content-center align-items-center bg-light position-relative">
-
-                <a href="/" class="regresar__boton">
-                    <i class="fa-solid fa-xmark"></i>
-                </a>
-
-                <form method="POST" action="{{ route('login') }}"
-                    class="w-75 d-flex justify-content-center align-items-center flex-column">
-                    @csrf
-                    <h2 class="fs-1 mt-5">Inicia Sesión</h2>
-
-                    <div class="w-75 col-md-12 d-flex justify-content-around align-items-center mt-3 mb-3">
-
-                        <a href="/"
-                            class="d-flex justify-content-center align-items-center border border-secondary rounded-5 text-secondary text-decoration-none opcion">
-                            <i class="fa-brands fa-google"></i>
-                        </a>
-                        <a href="#"
-                            class="d-flex justify-content-center align-items-center border border-secondary rounded-5 text-secondary text-decoration-none opcion">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="#"
-                            class="d-flex justify-content-center align-items-center border border-secondary rounded-5 text-secondary text-decoration-none opcion">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                    </div>
-
-                    <span class="mb-4">o inicia sesión con una cuenta</span>
-
-                    <div class="w-75 mb-4">
-                        <input id="email" type="email"
-                            class="form-control px-3 py-1 h-40 border border-dark  @error('email') is-invalid @enderror "
-                            name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
-                            placeholder="{{ __('Email Address') }}">
-
-
-                        @error('email')
-                            <span class="invalid-feedback text-center" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-
-                    </div>
-
-                    <div class="w-75 mb-3">
-                        <input id="password" type="password"
-                            class="form-control px-3 py-1 h-40 border border-dark @error('password') is-invalid @enderror"
-                            name="password" required autocomplete="current-password" placeholder="{{ __('Password') }}">
-
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-
-                    <div class="mb-2 d-inline w-50">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                                {{ old('remember') ? 'checked' : '' }}>
-
-                            <label class="form-check-label" for="remember">
-                                {{ __('Remember Me') }}
-                            </label>
-                        </div>
-                    </div>
-
-
-                    <button type="submit" class="mt-4 mb-2 btn btn-outline-dark rounded-5 btn-iniciar">
-                        {{ __('Login') }}
-                    </button>
-
-                    @if (Route::has('password.request'))
-                        <a href="{{ route('password.request') }}" class="mb-2">
-                            {{ __('Forgot Your Password?') }}
-                        </a>
-                    @endif
-                </form>
-
-                <div
-                    class="d-flex w-100 mh-100 d-md-none flex-column justify-content-center align-items-center text-center bg-dark text-white mt-1">
-                    <p class="mt-3 fs-5">Si aún no tienes cuenta por favor registrate aqui</p>
-                    <a href="{{ route('register') }}" class="btn btn-outline-light w-50 rounded-5 mb-4">
-                        {{ __('Register') }}
-                    </a>
-                </div>
+  
+            <div class="input-group flex-nowrap mb-4">
+              <span
+                class="input-group-text border border-dark"
+                id="addon-wrapping"
+              >
+                <i class="bx bxs-envelope"></i>
+              </span>
+              <input
+                type="text"
+                class="form-control border border-dark"
+                placeholder="Correo Electronico"
+                aria-label="Correo Electronico"
+                aria-describedby="addon-wrapping"
+              />
             </div>
+  
+            <div class="input-group flex-nowrap mb-4">
+              <span
+                class="input-group-text border border-dark"
+                id="addon-wrapping"
+                ><i class="bx bxs-lock-open"></i
+              ></span>
+              <input
+                type="text"
+                class="form-control border border-dark"
+                placeholder="Contraseña"
+                aria-label="Contraseña"
+                aria-describedby="addon-wrapping"
+              />
+            </div>
+  
+            <input
+              type="submit"
+              class="btn btn-outline-dark mt-3 w-75 rounded-5"
+              value="Registrarse"
+            />
+          </form>
         </div>
+      </div>
     </div>
-
+</body>
 @endsection
