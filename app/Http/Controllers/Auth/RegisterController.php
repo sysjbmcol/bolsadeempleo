@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Mail\WelcomeMail;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use App\Traits\RedirectsUsers;
@@ -40,12 +39,10 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $user = User::create([
-            // 'name' => $data['name'],
+            'name' => "Tu nombre",
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
-        Mail::to($user->email)->send(new WelcomeMail($user));
 
         return $user;
     }
