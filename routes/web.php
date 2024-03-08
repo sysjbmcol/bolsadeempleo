@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+//prueba
 Route::get('/', function () {
     return view('categorias.Index');
 })->name('index');
