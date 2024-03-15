@@ -8,9 +8,9 @@
 
 @section('content')
     <div class="d-flex justify-content-center align-items-center vh-100 w-100">
-        <div class="container d-flex border-5 w-100">
+        <div class="container d-flex border-5 w-100 ">
             <div
-                class="d-none w-100 mh-100 d-md-flex flex-column justify-content-center align-items-center text-center bg-dark color-white h-500">
+                class="d-none w-100 mh-100 d-md-flex flex-column justify-content-center align-items-center text-center bg-dark color-white h-500 rounded-start-5">
 
                 <h2 class="fs-1"> ¡¡Bienvenido!! </h2>
                 <p class="mt-3 fs-5">
@@ -85,12 +85,13 @@
                     </button>
                 </form>
                 <div
-                    class="d-sm-flex w-100 d-md-none flex-column justify-content-center align-items-center text-center bg-dark color-white mt-2">
-                    <p class="mt-3 fs-5">
-                        Si ya tienes cuenta, por favor inicia sesión aqui
-                    </p>
-                    <a href="{{ route('login') }}" class="btn btn-outline-light w-50 rounded-5  mb-4"> {{ __('Login') }}
-                    </a>
+                    class="d-sm-flex w-100 d-md-none flex-column justify-content-center rounded-bottom-5 align-items-center text-center bg-dark color-white mt-2">
+                    <h4 class="mt-3 mb-3">
+                        Si ya tienes cuenta, por favor inicia sesión 
+                        <a href="{{ route('login') }}">aquí
+                        </a>
+                        <br>
+                    </h4>
                 </div>
             </div>
         </div>
