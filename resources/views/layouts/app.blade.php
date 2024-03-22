@@ -51,7 +51,7 @@
 
 <body>
     <header class="header">
-        <a href="/" class="login"> {{ __('Home') }} </a>
+        <a href="{{route("index")}}" class="login"> {{ __('Home') }} </a>
         @if (!Auth::user())
             <a href="{{ route('login') }}" class="login">{{ __('Login') }}</a>
             <a href="{{ route('register') }}" class="login">{{ __('Register') }}</a>

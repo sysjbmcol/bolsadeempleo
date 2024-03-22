@@ -23,7 +23,7 @@
             <div
                 class="w-100 mh-100 d-flex flex-column justify-content-center align-items-center bg-light position-relative">
 
-                <a href="/" class="regresar__boton">
+                <a href="{{route("index")}}" class="regresar__boton">
                     <i class="fa-solid fa-xmark"></i>
                 </a>
 
