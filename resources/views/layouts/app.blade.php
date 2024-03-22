@@ -56,7 +56,10 @@
             <a href="{{ route('login') }}" class="login">{{ __('Login') }}</a>
             <a href="{{ route('register') }}" class="login">{{ __('Register') }}</a>
         @else
-            <a href="{{ route('logout') }}" class="login"> {{ __('Logout') }} </a>
+        @if (Route::currentRouteName() == 'index')
+        <a href="{{ route('contratacion.paso1') }}" class="login"> {{ __('Contratación') }} </a>
+        @endif                
+        <a href="{{ route('logout') }}" class="login"> {{ __('Logout') }} </a>
         @endif
     </header>
     <main class="main">

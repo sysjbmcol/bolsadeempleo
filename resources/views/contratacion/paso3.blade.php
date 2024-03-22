@@ -3,7 +3,7 @@
 @section('script')
 <script>
 
-    document.title = "Contratación - Paso 2"
+    document.title = "Contratación - Paso 3"
     const form = document.getElementById('formContratacion');
 
     form.addEventListener('submit', (e) => {
@@ -44,13 +44,13 @@
                     class="formContratacion"
                 >
                     <div class="mb-3">
-                      <label class="form-label">Selecciona una hora</label>
-                      <input type="time" class="form-control">
-                      <div id="fechatraducida" class="form-text">¿A que hora reunirse?</div>
+                      <label class="form-label">Ingresa tus solicitudes especiales</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <div id="fechatraducida" class="form-text">¿Buscas algo especifico?</div>
                     </div>
-                    <button type="submit" class="btn btn-primary" redirectTo={{route("contratacion.paso3")}}>
-                        <i class="fa-solid fa-arrow-right"></i>
-                        Siguiente paso
+                    <button type="submit" class="btn btn-primary" redirectTo={{route("contratacion.resumen")}}>
+                        <i class="fa-solid fa-check"></i>
+                        Finalizar
                     </button>
                 </form>
             </section>

@@ -59,3 +59,11 @@ Route::get('/contratacion/paso1', function () {
 Route::get('/contratacion/paso2', function () {
     return view('contratacion.paso2');
 })->name('contratacion.paso2');
+
+Route::get('/contratacion/paso3', function () {
+    return view('contratacion.paso3');
+})->name('contratacion.paso3');
+
+Route::get('/contratacion/resumen', function () {
+    return view('contratacion.resumen');
+})->name('contratacion.resumen');
