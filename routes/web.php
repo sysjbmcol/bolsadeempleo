@@ -50,3 +50,12 @@ Route::controller(App\Http\Controllers\Auth\VerificationController::class)->grou
 Route::get('/categorias', function () {
     return view('categorias.Index');
 });
+
+
+Route::get('/contratacion/paso1', function () {
+    return view('contratacion.paso1');
+})->name('contratacion.paso1');
+
+Route::get('/contratacion/paso2', function () {
+    return view('contratacion.paso2');
+})->name('contratacion.paso2');
