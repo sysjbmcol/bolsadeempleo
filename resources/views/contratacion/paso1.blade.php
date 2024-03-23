@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.contratacion')
 
 @section('script')
 <script>
@@ -55,48 +55,22 @@
 </script>
 @endsection
 
-@section('content')
 
-    <style>
-        .contratacionContainer{
-            margin: 0!important; 
-            height: calc(100vh - 100px);
-        }
+@section("formulario")
 
-        .formContratacion{
-            width: 100%;
-            max-width: 400px;
-            padding: 15px;
-        }
-
-        body {
-            background: url("../img/background.jpg") no-repeat center/cover;
-        }
-
-    </style>
-
-    <div class="row contratacionContainer">
-        <div class="col align-self-center">
-            <section class="d-flex justify-content-center">
-                <form
-                    id="formContratacion"
-                    class="formContratacion"
-                >
-                    <div class="mb-3">
-                      <label class="form-label">Programa una fecha en el siguien campo</label>
-                      <input type="date" class="form-control">
-                      <div id="fechatraducida" class="form-text">¿Cuando les gustaria reunirse?</div>
-                    </div>
-                    <button type="submit" class="btn btn-primary" redirectTo={{route("contratacion.paso2")}}>
-                        <i class="fa-solid fa-arrow-right"></i>
-                        Siguiente paso
-                    </button>
-                </form>
-            </section>
+    <form
+    id="formContratacion"
+    class="formContratacion"
+    >
+        <div class="mb-3">
+        <label class="form-label">Programa una fecha en el siguien campo</label>
+        <input type="date" class="form-control">
+        <div id="fechatraducida" class="form-text">¿Cuando les gustaria reunirse?</div>
         </div>
-    </div>
+        <button type="submit" class="btn btn-primary" redirectTo={{route("contratacion.paso2")}}>
+            <i class="fa-solid fa-arrow-right"></i>
+            Siguiente paso
+        </button>
+    </form>
 
 @endsection
-
-
-

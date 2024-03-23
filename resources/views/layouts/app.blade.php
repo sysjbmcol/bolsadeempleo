@@ -20,6 +20,8 @@
         <link href="{{ asset('template/css/bootstrap-icons.css') }}" rel="stylesheet">
         <link href="{{ asset('template/css/style.css') }}" rel="stylesheet"> 
 
+    @yield('imports')
+
     <title>Bolsa de empleo | TGL</title>
 </head>
 <style>

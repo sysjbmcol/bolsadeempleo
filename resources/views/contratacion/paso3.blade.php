@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.contratacion')
 
 @section('script')
 <script>
@@ -34,43 +34,24 @@
 </script>
 @endsection
 
-@section('content')
+@section('formulario')
 
-    <style>
-        .contratacionContainer{
-            margin: 0!important; 
-            height: calc(100vh - 100px);
-        }
-
-        .formContratacion{
-            width: 100%;
-            max-width: 400px;
-            padding: 15px;
-        }
-    </style>
-
-    <div class="row contratacionContainer">
-        <div class="col align-self-center">
-            <section class="d-flex justify-content-center">
-                <form
-                    redirectIfNotFoundDate="{{route('contratacion.paso1')}}"
-                    redirectIfNotFoundHour="{{route('contratacion.paso2')}}"
-                    id="formContratacion"
-                    class="formContratacion"
-                >
-                    <div class="mb-3">
-                      <label class="form-label">Ingresa tus solicitudes especiales</label>
-                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" aria-autocomplete="true" minlength="1" placeholder="¿Detalles extras?"></textarea>
-                      <div id="fechatraducida" class="form-text">¿Buscas algo especifico?</div>
-                    </div>
-                    <button type="submit" class="btn btn-primary" redirectTo={{route("contratacion.resumen")}}>
-                        <i class="fa-solid fa-check"></i>
-                        Finalizar
-                    </button>
-                </form>
-            </section>
-        </div>
+<form
+redirectIfNotFoundDate="{{route('contratacion.paso1')}}"
+redirectIfNotFoundHour="{{route('contratacion.paso2')}}"
+id="formContratacion"
+class="formContratacion"
+>
+    <div class="mb-3">
+    <label class="form-label">Ingresa tus solicitudes especiales</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" aria-autocomplete="true" minlength="1" placeholder="¿Detalles extras?"></textarea>
+    <div id="fechatraducida" class="form-text">¿Buscas algo especifico?</div>
     </div>
+    <button type="submit" class="btn btn-primary" redirectTo={{route("contratacion.resumen")}}>
+        <i class="fa-solid fa-check"></i>
+        Finalizar
+    </button>
+</form>
 
 @endsection
 
