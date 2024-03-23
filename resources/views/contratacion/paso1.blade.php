@@ -42,8 +42,7 @@
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const fecha = form[0].value;
-        if (!fecha) {
+        if (!sessionStorage.getItem('fecha')) {
             alert('Por favor selecciona una fecha');
             return;
         }

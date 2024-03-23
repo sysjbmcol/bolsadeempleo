@@ -6,13 +6,21 @@
     document.title = "Contratación - Paso 2"
     const form = document.getElementById('formContratacion');
 
+    // Asegurar que la fecha este presente, si no redirigir al paso 1
+    if (!sessionStorage.getItem('fecha'))
+        window.location.href = form.getAttribute('redirectIfNotFoundDate');
+
+    form.addEventListener('change', (e) => {
+        const hour = e.target.value;
+        sessionStorage.setItem('hour', hour);
+    });
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        // const fecha = form[0].value;
-        // if (!fecha) {
-        //     alert('Por favor selecciona una fecha');
-        //     return;
-        // }
+        if (!sessionStorage.getItem('hour')) {
+            alert('Por favor selecciona una hora');
+            return;
+        }
         const siguientePaso = e.target[1].getAttribute('redirectTo');
         window.location.href = siguientePaso;
     });
@@ -40,6 +48,7 @@
         <div class="col align-self-center">
             <section class="d-flex justify-content-center">
                 <form
+                    redirectIfNotFoundDate="{{route('contratacion.paso1')}}"
                     id="formContratacion"
                     class="formContratacion"
                 >

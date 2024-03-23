@@ -4,6 +4,13 @@
 <script>
 
     document.title = "Contratación - Resumen"
+    const verifyData = document.getElementById('verifyData');
+    if (!sessionStorage.getItem('fecha'))
+        window.location.href = verifyData.getAttribute('ifNotFoundDate');
+    if (!sessionStorage.getItem('hour'))
+        window.location.href = verifyData.getAttribute('ifNotFoundHour');
+    if (!sessionStorage.getItem('description'))
+        window.location.href = verifyData.getAttribute('ifNotFoundDescription');
     
 </script>
 @endsection
@@ -26,6 +33,15 @@
     <div class="row contratacionContainer">
         <div class="col align-self-center">
             <section class="d-flex justify-content-center">
+
+                {{-- Seccion necesaria para la verificación de datos --}}
+                <section
+                    id="verifyData"
+                    ifNotFoundDate="{{route('contratacion.paso1')}}"
+                    ifNotFoundHour="{{route('contratacion.paso2')}}"
+                    ifNotFoundDescription="{{route('contratacion.paso3')}}"
+                >
+                </section>
 
                 <div class="d-flex flex-column justify-content-center text-center">
                     <h2 class="text-wrap text-center" style="width: 180vh;">
