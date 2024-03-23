@@ -68,6 +68,11 @@
             max-width: 400px;
             padding: 15px;
         }
+
+        body {
+            background: url("../img/background.jpg") no-repeat center/cover;
+        }
+
     </style>
 
     <div class="row contratacionContainer">
