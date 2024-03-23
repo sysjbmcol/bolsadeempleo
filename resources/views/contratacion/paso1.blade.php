@@ -63,7 +63,7 @@
     class="formContratacion"
     >
         <div class="mb-3">
-        <label class="form-label">Programa una fecha en el siguien campo</label>
+        <label class="form-label">Programa una fecha en el siguiente campo</label>
         <input type="date" class="form-control">
         <div id="fechatraducida" class="form-text">¿Cuando les gustaria reunirse?</div>
         </div>
