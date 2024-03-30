@@ -5,6 +5,9 @@
 
     
     const form = document.getElementById('formContratacion');
+    if (sessionStorage.getItem('description')) {
+        form[0].value = sessionStorage.getItem('description');
+    }
     
     // Asegurar que la fecha este presente, si no redirigir al paso 1
     if(!sessionStorage.getItem('fecha'))

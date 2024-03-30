@@ -12,6 +12,12 @@
         const fecha = new Date(fechaSinTransformar);
         // sumarle un dia a la fecha ya que por algún motivo se resta un dia
         fecha.setDate(fecha.getDate() + 1);
+        fecha.setHours(23)
+        fecha.setMinutes(59)
+        const hoy = new Date();
+        if (hoy > fecha) {
+            return 'Invalid Date';
+        }
         const fechaTraducida = fecha.toLocaleDateString('es-ES', {
             weekday: 'long',
             year: 'numeric',
@@ -30,6 +36,7 @@
 
     form.addEventListener('change', (e) => {
         const fechaTraducida = traducirFecha(e.target.value);
+        //console.log(fechaTraducida);
         if (fechaTraducida === 'Invalid Date') {
             infoFecha.innerText = `¿Cuando les gustaria reunirse?`;
             return;
@@ -42,8 +49,9 @@
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        if (!sessionStorage.getItem('fecha')) {
-            alert('Por favor selecciona una fecha');
+        const fecha = sessionStorage.getItem('fecha');
+        if (!fecha || (traducirFecha(fecha) === 'Invalid Date')) {
+            alert('Por favor selecciona una fecha valida después de hoy o después de la fecha actual');
             return;
         }
         const siguientePaso = e.target[1].getAttribute('redirectTo');
