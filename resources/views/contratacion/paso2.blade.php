@@ -62,11 +62,11 @@
     <form
     redirectIfNotFoundDate="{{route('contratacion.paso1')}}"
     id="formContratacion"
-    class="formContratacion"
+    class="formContratacion card bg-light"
     >
         <div class="mb-3">
         <label class="form-label">Selecciona una hora</label>
-        <input type="time" class="form-control">
+        <input type="time" class="form-control text-center">
         <div id="fechatraducida" class="form-text">¿A que hora reunirse?</div>
         </div>
         <button type="submit" class="btn btn-primary" redirectTo={{route("contratacion.paso3")}}>

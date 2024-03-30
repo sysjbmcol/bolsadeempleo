@@ -43,7 +43,7 @@
 redirectIfNotFoundDate="{{route('contratacion.paso1')}}"
 redirectIfNotFoundHour="{{route('contratacion.paso2')}}"
 id="formContratacion"
-class="formContratacion"
+class="formContratacion card bg-light"
 >
     <div class="mb-3">
     <label class="form-label">Ingresa tus solicitudes especiales</label>

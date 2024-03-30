@@ -68,11 +68,11 @@
 
     <form
     id="formContratacion"
-    class="formContratacion"
+    class="formContratacion card bg-light"
     >
-        <div class="mb-3">
+        <div class="mb-4">
         <label class="form-label">Programa una fecha en el siguiente campo</label>
-        <input type="date" class="form-control">
+        <input type="date" class="form-control text-center">
         <div id="fechatraducida" class="form-text">¿Cuando les gustaria reunirse?</div>
         </div>
         <button type="submit" class="btn btn-primary" redirectTo={{route("contratacion.paso2")}}>
