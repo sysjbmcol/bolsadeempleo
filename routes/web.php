@@ -8,6 +8,13 @@ Route::get('/', function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Nuevas ruta
+Route::get('/show/{id}', [App\Http\Controllers\Candidatos\Candidatos::class, 'obtenerCandidato']);
+
+Route::get('/candidatos', [App\Http\Controllers\Candidatos\Candidatos::class, 'filtroHabilidad'])
+    ->name('candidatos.filtrohabilidad');
+// Fin nuevas ruta
+
 // login
 Route::controller(App\Http\Controllers\Auth\LoginController::class)->group(function () {
     Route::get('login', 'showLoginForm')->name('login');
@@ -44,7 +51,6 @@ Route::controller(App\Http\Controllers\Auth\VerificationController::class)->grou
     Route::get('email/verify', 'show')->name('verification.notice');
     Route::get('email/verify/{id}/{hash}', 'verify')->name('verification.verify');
     Route::post('email/resend', 'resend')->name('verification.resend');
-
 });
 
 Route::get('/categorias', function () {
