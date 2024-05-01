@@ -9,10 +9,12 @@ Route::get('/', function () {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Nuevas ruta
-Route::get('/show/{id}', [App\Http\Controllers\Candidatos\Candidatos::class, 'obtenerCandidato']);
+Route::get('/show/{id}', [App\Http\Controllers\Candidatos\Candidatos::class, 'obtenerCandidato'])->name('show.candidato');
 
 Route::get('/candidatos', [App\Http\Controllers\Candidatos\Candidatos::class, 'filtroHabilidad'])
     ->name('candidatos.filtrohabilidad');
+
+    Route::get('/candidato/{id}', [App\Http\Controllers\Candidatos\Candidatos::class, 'mostrarCandidato']);
 // Fin nuevas ruta
 
 // login

@@ -11,7 +11,7 @@ class Candidatos extends Controller
 {
 
     /* Crear funcion para poder obtener los datos que se van a visualizar del candidato,
-     debe hacer la busqueda por el ID del candidato, la fucnion se debe poder consultar a traves
+     debe hacer la busqueda por el ID del candidato, la funcion se debe poder consultar a traves
      de una ruta. Una vez se termine el diseño de la vista se debe ajustar para que muestre la informacion de X candidato
      */
 
@@ -19,7 +19,7 @@ class Candidatos extends Controller
     {
         $id = intval($request->route('id'));
         $usuario = User::find($id);
-        return view('candidatos.show')->with(['usuario' => $usuario]);
+        return response()->json($usuario);
     }
 
     /*
@@ -39,7 +39,7 @@ class Candidatos extends Controller
     private function retornarArrayHabilidades(string $habilidades)
     {
         $finalArray = [];
-        $expresion_regular = '/[,-]/';
+        $expresion_regular = '/[,- ]/';
         $arrayHabilidades = preg_split($expresion_regular, $habilidades);
 
         for ($i = 0; $i < count($arrayHabilidades); $i++) {
@@ -61,5 +61,11 @@ class Candidatos extends Controller
         // $query->where('id', 1);
 
         return $query;
+    }
+
+    public function mostrarCandidato(Request $request)
+    {
+        $id = intval($request->route('id'));
+        return view('candidatos.show')->with(['id' => $id]);
     }
 }
